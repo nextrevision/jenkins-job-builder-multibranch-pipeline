@@ -1,0 +1,11 @@
+---
+- job:
+    name: mb-definition
+    project-type: multibranch-pipeline
+    multibranch:
+      number-to-keep: '-1'
+      days-to-keep: '-1'
+      scm:
+        github:
+          repo: 'mb-definition'
+          repo-owner: 'nextrevision'

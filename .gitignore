@@ -1,0 +1,9 @@
+/dist
+/build
+*.pyc
+*.pyo
+*.egg*
+*.so
+.tox
+.cache
+pytestdebug.log

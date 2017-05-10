@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch">
+  <actions/>
+  <properties>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.config.FolderConfig plugin="pipeline-model-definition">
+      <dockerLabel>17.04</dockerLabel>
+      <registry plugin="docker-commons">
+        <url>https://my.dockerregistry.com</url>
+        <credentialsId>07f96af2-a52c-4144-ae5b-deb4f7b31fa3</credentialsId>
+      </registry>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.config.FolderConfig>
+  </properties>
+  <folderViews class="jenkins.branch.MultiBranchProjectViewHolder" plugin="branch-api">
+    <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+  </folderViews>
+  <healthMetrics>
+    <com.cloudbees.hudson.plugins.folder.health.WorstChildHealthMetric plugin="cloudbees-folder">
+      <nonRecursive>true</nonRecursive>
+    </com.cloudbees.hudson.plugins.folder.health.WorstChildHealthMetric>
+  </healthMetrics>
+  <icon class="jenkins.branch.MetadataActionFolderIcon" plugin="branch-api">
+    <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+  </icon>
+  <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder">
+    <pruneDeadBranches>false</pruneDeadBranches>
+    <daysToKeep>100</daysToKeep>
+    <numToKeep>200</numToKeep>
+  </orphanedItemStrategy>
+  <triggers>
+    <com.cloudbees.hudson.plugins.folder.computed.PeriodicFolderTrigger plugin="cloudbees-folder">
+      <spec>H H * * *</spec>
+      <interval>280000</interval>
+    </com.cloudbees.hudson.plugins.folder.computed.PeriodicFolderTrigger>
+  </triggers>
+  <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api">
+    <data>
+      <jenkins.branch.BranchSource>
+        <source class="org.jenkinsci.plugins.github_branch_source.GitHubSCMSource" plugin="github-branch-source">
+          <id>04db6e2a-0421-5f76-bd85-093023966376</id>
+          <checkoutCredentialsId>f5d551d6-f479-4f9c-b8fa-17eb3f70b4f8</checkoutCredentialsId>
+          <scanCredentialsId>0b6eebc5-a630-43e3-a9e5-a7407213cb82</scanCredentialsId>
+          <repoOwner>nextrevision</repoOwner>
+          <repository>mb-definition</repository>
+          <includes>feature/*</includes>
+          <excludes>master</excludes>
+          <buildOriginBranch>false</buildOriginBranch>
+          <buildOriginBranchWithPR>false</buildOriginBranchWithPR>
+          <buildOriginPRMerge>true</buildOriginPRMerge>
+          <buildOriginPRHead>true</buildOriginPRHead>
+          <buildForkPRMerge>false</buildForkPRMerge>
+          <buildForkPRHead>true</buildForkPRHead>
+        </source>
+        <strategy class="jenkins.branch.DefaultBranchPropertyStrategy">
+          <properties class="empty-list"/>
+        </strategy>
+      </jenkins.branch.BranchSource>
+    </data>
+    <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+  </sources>
+  <factory class="org.jenkinsci.plugins.workflow.multibranch.WorkflowBranchProjectFactory">
+    <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+  </factory>
+  <actions/>
+  <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <keepDependencies>false</keepDependencies>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <canRoam>true</canRoam>
+  <scm class="hudson.scm.NullSCM"/>
+  <publishers/>
+  <buildWrappers/>
+</org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject>
