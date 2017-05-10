@@ -1,3 +1,4 @@
 jenkins-job-builder<2.0.0
 flake8
 pytest
+tox
