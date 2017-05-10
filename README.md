@@ -1,4 +1,4 @@
-# jenkins-job-builder-multibranch-pipeline
+# jenkins-job-builder-multibranch-pipeline [![Build Status](https://travis-ci.org/nextrevision/jenkins-job-builder-multibranch-pipeline.svg?branch=master)](https://travis-ci.org/nextrevision/jenkins-job-builder-multibranch-pipeline)
 
 Support for [multibranch pipelines](https://plugins.jenkins.io/workflow-multibranch) in JJB.
 
